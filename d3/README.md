@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/d3 "3.5.5-3"] ;; latest release
+[cljsjs/d3 "3.5.7-1"] ;; latest release
 ```
 [](/dependency)
 
@@ -17,4 +17,4 @@ you can require the packaged library like so:
 
 Uses externs provided by `federico-b/d3-externs`, many thanks!
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

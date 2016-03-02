@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/hammer "2.0.4-4"] ;; latest release
+[cljsjs/hammer "2.0.4-5"] ;; latest release
 ```
 [](/dependency)
 
@@ -15,4 +15,4 @@ you can require the packaged library like so:
   (:require cljsjs.hammer))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

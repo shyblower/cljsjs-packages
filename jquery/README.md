@@ -2,7 +2,8 @@
 
 [](dependency)
 ```clojure
-[cljsjs/jquery "1.9.1-0"] ;; latest release
+[cljsjs/jquery "1.11.3-0"] ;; latest 1.* release
+[cljsjs/jquery "2.1.4-0"]  ;; latest 2.* release
 ```
 [](/dependency)
 
@@ -15,4 +16,4 @@ you can require the packaged library like so:
   (:require cljsjs.jquery))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

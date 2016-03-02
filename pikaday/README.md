@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/pikaday "1.3.2-0"] ;; latest release
+[cljsjs/pikaday "1.4.0-1"] ;; latest release
 ```
 [](/dependency)
 
@@ -22,4 +22,4 @@ or if you want to use pikadays optional Moment.js integration:
   (:require cljsjs.pikaday.with-moment))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

@@ -21,6 +21,45 @@ function Moment() {};
 function moment() {};
 
 /**
+ * @typedef {{ordinalParse:?RegExp, _abbr:?string, _ordinalParseLenient:?RegExp}}
+ */
+Moment.LocaleData;
+
+
+Moment.LocaleData.months = function() {};
+Moment.LocaleData.monthsShort = function() {};
+Moment.LocaleData.monthsParse = function() {};
+Moment.LocaleData.weekdays = function() {};
+Moment.LocaleData.weekdaysShort = function() {};
+Moment.LocaleData.weekdaysMin = function() {};
+Moment.LocaleData.weekdaysParse = function() {};
+Moment.LocaleData.longDateFormat = function() {};
+Moment.LocaleData.isPM = function() {};
+Moment.LocaleData.meridiem = function() {};
+Moment.LocaleData.calendar = function() {};
+Moment.LocaleData.relativeTime = function() {};
+Moment.LocaleData.pastFuture = function() {};
+Moment.LocaleData.ordinal = function() {};
+Moment.LocaleData.preparse = function() {};
+Moment.LocaleData.postformat = function() {};
+Moment.LocaleData.weeks = function() {};
+Moment.LocaleData.invalidDate = function() {};
+Moment.LocaleData.firstDayOfWeek = function() {};
+
+/**
+ * @nosideeffects
+ * @type {(function():!number)}
+ */
+Moment.LocaleData.prototype.firstDayOfWeek = function() {};
+
+Moment.LocaleData.firstDayOfYear = function() {};
+
+/**
+ * @type {(function():!Moment.LocaleData|function(string):!Moment.LocaleData)}
+ */
+moment.localeData = function() {};
+
+/**
  * @typedef {{seconds:?number, minutes:?number, hours:?number, weeks:?number, months:?number, years:?number}}
  */
 Moment.DateRecord;
@@ -135,6 +174,12 @@ Moment.prototype.dayOfYear = function() {};
 Moment.prototype.week = function() {};
 
 /**
+ * @since 2.1.0
+ * @type {(function():!number|function(!number):!Moment)}
+ */
+Moment.prototype.weekday = function() {};
+
+/**
  * @since 2.0.0
  * @type {(function():!number|function(!number):!Moment)}
  */
@@ -233,6 +278,20 @@ Moment.prototype.from = function() {};
 
 /**
  * @nosideeffects
+ * @since 1.0.0
+ * @type {function(!boolean=):!Moment}
+ */
+Moment.prototype.toNow = function() {};
+
+/**
+ * @nosideeffects
+ * @since 1.0.0
+ * @type {function(!(Moment|string|number|Date|Array.<!number>), !boolean=):!Moment}
+ */
+Moment.prototype.to = function() {};
+
+/**
+ * @nosideeffects
  * @since 1.3.0
  * @type {function():!Moment}
  */
@@ -300,6 +359,13 @@ Moment.prototype.isSame = function() {};
  * @type {function(!(Moment|string|number|Date|Array.<!number>), !string=):!boolean}
  */
 Moment.prototype.isAfter = function() {};
+
+/**
+ * @nosideeffects
+ * @since 2.9.0
+ * @type {function(!(Moment|string|number|Date|Array.<!number>), !(Moment|string|number|Date|Array.<!number>), !string=):!boolean}
+ */
+Moment.prototype.isBetween = function() {};
 
 /**
  * @nosideeffects
@@ -448,3 +514,8 @@ Moment.prototype.max = function() {};
  * @since 2.8.1
  */
 Moment.prototype.locale = function() {};
+
+/**
+ * @since 2.7.0
+ */
+Moment.prototype.relativeTimeThreshold = function() {};

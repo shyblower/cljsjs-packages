@@ -4,13 +4,11 @@
    Updated with new functions from v2.1.2
 */
 
-var Firebase, FirebaseDataSnapshot, FirebaseSimpleLogin;
-
 /**
    @param {string} firebaseURL
    @constructor
 */
-var Firebase = function(firebaseURL) {}
+var Firebase = function(firebaseURL) {};
 
 Firebase.ServerValue = {
   TIMESTAMP: null
@@ -274,6 +272,12 @@ Firebase.prototype.limitToFirst = function(limit) {};
    @param {number} limit
    @return {Firebase} Actually it returns Query
 */
+Firebase.prototype.limitToLast = function(limit) {};
+
+/**
+   @param {number} limit
+   @return {Firebase} Actually it returns Query
+*/
 Firebase.prototype.limit = function(limit) {};
 
 /**
@@ -296,7 +300,7 @@ Firebase.prototype.onDisconnect = function() {};
    @param {Object=} context
    @constructor
 */
-var FirebaseSimpleLogin = function(ref, callback, context) {}
+var FirebaseSimpleLogin = function(ref, callback, context) {};
 
 /**
    @param {string} provider

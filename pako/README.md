@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/pako "0.2.6-0"] ;; latest release
+[cljsjs/pako "0.2.7-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -32,4 +32,4 @@ you can require the packaged library like so:
 ```
 
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

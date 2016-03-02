@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/waypoints "3.1.1-0"] ;; latest release
+[cljsjs/waypoints "4.0.0-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -16,4 +16,4 @@ so:
   (:require cljsjs.waypoints))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies
