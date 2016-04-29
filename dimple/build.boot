@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
                   [cljsjs/d3 "3.5.5-1"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -26,4 +26,6 @@
                 #"^dimple\.v([\d+\.]*).min.js" "cljsjs/dimple/production/dimple.min.inc.js"})
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.dimple"
-              :requires ["cljsjs.d3"])))
+              :requires ["cljsjs.d3"])
+   (pom)
+   (jar)))

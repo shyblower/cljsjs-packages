@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -21,4 +21,6 @@
     (sift :move {#"^web-animations-js-([\d\.]*)/web-animations.min.js$"
                  "cljsjs/web-animations/development/web-animations-js.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.web-animations")))
+    (deps-cljs :name "cljsjs.web-animations")
+    (pom)
+    (jar)))

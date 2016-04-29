@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -63,4 +63,6 @@
     (replace-content :in "cljsjs/echarts/production/echarts.min.inc.js" :match #"暂无数据" :value "No data yet")
     (replace-content :in "cljsjs/echarts/development/echarts.inc.js" :match #"暂无数据":value "No data yet")
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.echarts")))
+    (deps-cljs :name "cljsjs.echarts")
+    (pom)
+    (jar)))

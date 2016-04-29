@@ -1,11 +1,11 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
 (def +lib-version+ "8.1.5")
-(def +version+ (str +lib-version+ "-0"))
+(def +version+ (str +lib-version+ "-1"))
 
 (task-options!
  pom { :project     'cljsjs/auth0-lock
@@ -22,4 +22,6 @@
     (sift :move { #"^lock.*/build/auth0-lock\.js$"      "cljsjs/auth0-lock/development/auth0-lock.inc.js"
                   #"^lock.*/build/auth0-lock\.min\.js$" "cljsjs/auth0-lock/production/auth0-lock.min.inc.js" })
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.auth0-lock")))
+    (deps-cljs :name "cljsjs.auth0-lock")
+    (pom)
+    (jar)))

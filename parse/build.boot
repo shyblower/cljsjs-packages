@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -24,4 +24,6 @@
     (sift :move {#"parse-([\d\.]*).js" "cljsjs/parse/development/parse.inc.js"
                  #"parse-([\d\.]*).min.js" "cljsjs/parse/production/parse.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.parse")))
+    (deps-cljs :name "cljsjs.parse")
+    (pom)
+    (jar)))

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[boot.task.built-in :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -23,4 +23,6 @@
     (sift :move {#"^pusher\.js" "cljsjs/pusher/development/pusher.inc.js"
                  #"^pusher\.min\.js" "cljsjs/pusher/production/pusher.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.pusher")))
+    (deps-cljs :name "cljsjs.pusher")
+    (pom)
+    (jar)))

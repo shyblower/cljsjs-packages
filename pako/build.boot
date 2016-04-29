@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -24,4 +24,6 @@
     (sift :move {#"pako\.js"      "cljsjs/pako/development/pako.inc.js"
                  #"pako\.min\.js" "cljsjs/pako/production/pako.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.pako")))
+    (deps-cljs :name "cljsjs.pako")
+    (pom)
+    (jar)))

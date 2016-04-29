@@ -1,5 +1,5 @@
 (set-env!
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -35,4 +35,6 @@
       (replace-content :in src :out src
         :match #"(?s)function\(global.+?\}\)\(this"
         :value "function(global, factory) { Long = factory(); })(this")
-      (deps-cljs :name "cljsjs.long"))))
+      (deps-cljs :name "cljsjs.long"))
+      (pom)
+      (jar)))

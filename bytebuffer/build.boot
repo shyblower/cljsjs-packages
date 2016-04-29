@@ -1,5 +1,5 @@
 (set-env!
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
                  [cljsjs/long "3.0.3-1"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -38,4 +38,6 @@
         :match #"(?s)function\(global.+?\}\)\(this"
         :value "function(global, factory) { ByteBuffer = factory(Long); })(this")
       (deps-cljs :name "cljsjs.bytebuffer"
-        :requires ["cljsjs.long"]))))
+        :requires ["cljsjs.long"])
+      (pom)
+      (jar))))

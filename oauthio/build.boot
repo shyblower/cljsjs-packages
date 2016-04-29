@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,4 +23,6 @@
     (sift :move {#"^oauth-js-([\d\.]*)/dist/oauth\.js"      "cljsjs/oauthio/development/oauthio.inc.js"
                  #"^oauth-js-([\d\.]*)/dist/oauth\.min\.js" "cljsjs/oauthio/production/oauthio.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.oauthio")))
+    (deps-cljs :name "cljsjs.oauthio")
+    (pom)
+    (jar)))

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -15,3 +15,7 @@
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"Google Maps ToS" "https://www.google.com/intl/en_us/help/terms_maps.html"}})
 
+(deftask package []
+  (comp
+    (pom)
+    (jar)))

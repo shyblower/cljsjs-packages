@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -28,4 +28,6 @@
 
                         #"^responsive-nav.js-.*/client/dist/styles/responsive-nav.css$" "cljsjs/responsive-nav/common/responsive-nav.css"})
            (sift :include #{#"^cljsjs"})
-           (deps-cljs :name "cljsjs.responsive-nav")))
+           (deps-cljs :name "cljsjs.responsive-nav")
+           (pom)
+           (jar)))

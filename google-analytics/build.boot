@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -21,4 +21,6 @@
               :checksum "eed8ec65a6dd9b05eed6d4a02e1439e4")
     (sift :move {#"analytics.js" "cljsjs/google-analytics/production/google-analytics.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.google-analytics")))
+    (deps-cljs :name "cljsjs.google-analytics")
+    (pom)
+    (jar)))

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -66,5 +66,7 @@
     (sift :move {#"build/languages/(.*)\.min\.js" "cljsjs/common/highlight/$1.inc.js"
                  #"build/styles/(.*)\.css" "cljsjs/common/highlight/$1.css"})
     (sift :include #{#"^cljsjs" #"^deps\.cljs$"})
-    (generate-lang-deps)))
+    (generate-lang-deps)
+    (pom)
+    (jar)))
 

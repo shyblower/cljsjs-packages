@@ -95,9 +95,29 @@ var L = {
     "disableImageDrag": function () {},
     "enableImageDrag": function () {}
   },
-  "LatLng": function () {},
+  "LatLng": {
+    "lat": {},
+    "lng": {}
+  },
   "latLng": function () {},
-  "LatLngBounds": function () {},
+  "LatLngBounds": {
+    "extend": function() {},
+    "getSouthWest": function() {},
+    "getNorthEast": function() {},
+    "getNorthWest": function() {},
+    "getSouthEast": function() {},
+    "getWest": function() {},
+    "getSouth": function() {},
+    "getEast": function() {},
+    "getNorth": function() {},
+    "getCenter": function() {},
+    "contains": function() {},
+    "intersects": function() {},
+    "equals": function() {},
+    "toBBoxString": function() {},
+    "pad": function() {},
+    "isValid": function() {}
+  },
   "latLngBounds": function () {},
   "Projection": {
     "SphericalMercator": {
@@ -608,7 +628,13 @@ var L = {
   },
   "Map": function () {},
   "map": {
+    "addLayer": function () {},
+    "hasLayer": function () {},
+    "eachLayer": function () {},
+    "openPopup": function () {},
+    "closePopup": function () {},
     "addControl": function () {},
+    "removeControl": function () {},
     "setView": function () {},
     "setZoom": function () {},
     "setZoomIn": function () {},
@@ -675,8 +701,16 @@ var L = {
    },
   "LayerGroup": function () {},
   "layerGroup": {
+    "addTo": function () {},
     "addLayer": function () {},
+    "removeLayer": function () {},
+    "hasLayer": function () {},
+    "getLayer": function () {},
+    "getLayers": function () {},
+    "eachLayer": function () {},
     "clearLayers": function () {},
+    "hasLayer": function () {},
+    "toGeoJSON": function () {},
    },
   "FeatureGroup": function () {},
   "featureGroup": function () {},

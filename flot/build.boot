@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
                   [cljsjs/jquery "1.9.0-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -61,4 +61,6 @@
 
     (sift :move {#"^cljsjs/plugins/(.*)\.js" "cljsjs/plugins/$1.inc.js"})
 
-    (generate-plugin-deps)))
+    (generate-plugin-deps)
+    (pom)
+    (jar)))

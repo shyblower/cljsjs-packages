@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,4 +23,6 @@
     (sift :move {#"^CSV-JS-.*/csv.js" "cljsjs/development/csv.inc.js"})
     (minify :in "cljsjs/development/csv.inc.js" :out "cljsjs/production/csv.min.inc.js")
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.csv")))
+    (deps-cljs :name "cljsjs.csv")
+    (pom)
+    (jar)))

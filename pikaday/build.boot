@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
                   [cljsjs/moment "2.6.0-3"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -29,4 +29,6 @@
             :out "cljsjs/pikaday/production/pikaday.min.inc.js")
     (minify :in  "cljsjs/pikaday/development/pikaday.css"
             :out "cljsjs/pikaday/production/pikaday.min.css")
-    (sift :include #{#"^cljsjs/" #"^deps.cljs$"})))
+    (sift :include #{#"^cljsjs/" #"^deps.cljs$"})
+    (pom)
+    (jar)))

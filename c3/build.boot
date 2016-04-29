@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
                  [cljsjs/d3          "3.5.5-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -27,4 +27,6 @@
                 #"^c3-([\d\.]*)/c3\.min\.css" "cljsjs/c3/common/c3.min.css"})
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name     "cljsjs.c3"
-              :requires ["cljsjs.d3"])))
+              :requires ["cljsjs.d3"])
+   (pom)
+   (jar)))

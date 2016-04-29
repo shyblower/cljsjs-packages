@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,4 +23,6 @@
                         #".*dist/quill\.base\.css" "cljsjs/quill/common/quill.base.css"
                         #".*dist/quill\.snow\.css" "cljsjs/quill/common/quill.snow.css"})
            (sift :include #{#"^cljsjs"})
-           (deps-cljs :name "cljsjs.quill")))
+           (deps-cljs :name "cljsjs.quill")
+           (pom)
+           (jar)))

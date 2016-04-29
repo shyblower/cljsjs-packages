@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,4 +23,6 @@
    (sift :move {#"^Dexie\.js-([\d\.]*)/dist/latest/Dexie\.js"     "cljsjs/production/dexie.min.inc.js"})
    (sift :move {#"^Dexie\.js-([\d\.]*)/dist/latest/Dexie\.min\.js"     "cljsjs/development/dexie.inc.js"})
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.dexie")))
+   (deps-cljs :name "cljsjs.dexie")
+   (pom)
+   (jar)))

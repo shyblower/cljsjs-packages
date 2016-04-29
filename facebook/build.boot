@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -16,3 +16,7 @@
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"Apache v2" "http://www.apache.org/licenses/LICENSE-2.0"}})
 
+(deftask package []
+  (comp
+    (pom)
+    (jar)))

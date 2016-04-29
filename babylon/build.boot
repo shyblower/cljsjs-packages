@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -22,4 +22,6 @@
     (download :url "http://cdn.babylonjs.com/2-2/babylon.js")
     (sift :move {#"babylon.js" "cljsjs/babylon/production/babylon.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.babylon")))
+    (deps-cljs :name "cljsjs.babylon")
+    (pom)
+    (jar)))

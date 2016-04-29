@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -25,4 +25,6 @@
    (minify    :in       "cljsjs/css_layout/development/css-layout.inc.js"
               :out      "cljsjs/css_layout/production/css-layout.min.inc.js")
    (sift      :include  #{#"^cljsjs"})
-   (deps-cljs :name     "cljsjs.css-layout")))
+   (deps-cljs :name     "cljsjs.css-layout")
+   (pom)
+   (jar)))

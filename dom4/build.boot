@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -22,4 +22,6 @@
     (sift :move {#"dom4.max.js" "cljsjs/dom4/development/dom4.inc.js"
                  #"dom4.js" "cljsjs/dom4/production/dom4.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.dom4")))
+    (deps-cljs :name "cljsjs.dom4")
+    (pom)
+    (jar)))

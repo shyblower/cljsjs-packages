@@ -3,7 +3,7 @@
 
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
                   [cljsjs/react       "0.14.3-0" :scope "provided"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -30,4 +30,6 @@
                  #"^style.css$"
                  "cljsjs/react-day-picker/common/react-day-picker.inc.css"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.react-day-picker" :requires ["cljsjs.react"])))
+    (deps-cljs :name "cljsjs.react-day-picker" :requires ["cljsjs.react"])
+    (pom)
+    (jar)))

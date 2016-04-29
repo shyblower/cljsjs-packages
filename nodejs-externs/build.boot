@@ -1,5 +1,5 @@
 (set-env!
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[boot.core :as core]
          '[boot.tmpdir :as tmpd]
@@ -36,4 +36,6 @@
    (sift :move {#"^node.js-closure-compiler-externs-[^/]*/([^/]*).js$"
                 "cljsjs/nodejs-externs/common/$1.js"})
    (sift :include #{#"^cljsjs"})
-   (generate-local-deps)))
+   (generate-local-deps)
+   (pom)
+   (jar)))

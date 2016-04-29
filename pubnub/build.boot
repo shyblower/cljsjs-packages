@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -26,4 +26,6 @@
                 (re-pattern (str "^pubnub-" +lib-version+ ".min.js$"))
                 "cljsjs/pubnub/production/pubub.min.inc.js"})
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.pubnub")))
+   (deps-cljs :name "cljsjs.pubnub")
+   (pom)
+   (jar)))

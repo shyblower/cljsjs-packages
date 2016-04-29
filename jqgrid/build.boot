@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
                   [cljsjs/jquery    "2.1.4-0"]
                   [cljsjs/jquery-ui "1.11.3-1"] ])
 
@@ -52,4 +52,6 @@
    (deps-cljs :name "cljsjs.jqgrid" :requires ["cljsjs.jquery" "cljsjs.jquery-ui"])
    (sift :move {#"^jqGrid-([\d\.]*)/js/i18n/(.*).js" "cljsjs/jqgrid/common/$2.inc.js"})
    (sift :include #{#"^cljsjs" #"^deps\.cljs$"})
-   (generate-lang-deps)))
+   (generate-lang-deps)
+   (pom)
+   (jar)))

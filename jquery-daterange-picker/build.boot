@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
                   [cljsjs/jquery    "1.11.3-0"]
                   [cljsjs/moment    "2.10.6-0"]])
 
@@ -29,4 +29,6 @@
    ;         :out "cljsjs/production/jquery-daterange-picker.min.inc.js")
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.jquery-daterange-picker"
-              :requires ["cljsjs.moment" "cljsjs.jquery"])))
+              :requires ["cljsjs.moment" "cljsjs.jquery"])
+   (pom)
+   (jar)))

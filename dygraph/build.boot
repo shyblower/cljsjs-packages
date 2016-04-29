@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -26,5 +26,7 @@
                          #"^dygraph-combined.js"
                          "cljsjs/dygraph/production/dygraph.min.inc.js"})
    (sift      :include  #{#"^cljsjs"})
-   (deps-cljs :name     "cljsjs.dygraph")))
+   (deps-cljs :name     "cljsjs.dygraph")
+   (pom)
+   (jar)))
 

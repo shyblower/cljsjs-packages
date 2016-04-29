@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
                   [cljsjs/react       "0.13.3-0"]
                   [cljsjs/snapsvg     "0.4.1-0"]])
 
@@ -31,4 +31,6 @@
                  "cljsjs/react-burger-menu/production/react-burger-menu.min.inc.js"})
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.react-burger-menu"
-               :requires ["cljsjs.react" "cljsjs.snapsvg"])))
+               :requires ["cljsjs.react" "cljsjs.snapsvg"])
+    (pom)
+    (jar)))

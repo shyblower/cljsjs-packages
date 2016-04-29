@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -15,3 +15,7 @@
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"Heap  ToS" "https://heapanalytics.com/terms"}})
 
+(deftask package []
+  (comp
+    (pom)
+    (jar)))

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -24,4 +24,6 @@
     (sift :move {#"lodash\.js" "cljsjs/lodash/development/lodash.inc.js"
                  #"lodash\.min\.js" "cljsjs/lodash/production/lodash.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.lodash")))
+    (deps-cljs :name "cljsjs.lodash")
+    (pom)
+    (jar)))

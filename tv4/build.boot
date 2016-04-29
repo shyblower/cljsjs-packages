@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.10" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -24,4 +24,6 @@
     (sift :move {#"^tv4-([\d\.]*)/tv4\.js"      "cljsjs/tv4/development/tv4.inc.js"
                  #"^tv4-([\d\.]*)/tv4\.min\.js" "cljsjs/tv4/production/tv4.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.tv4")))
+    (deps-cljs :name "cljsjs.tv4")
+    (pom)
+    (jar)))

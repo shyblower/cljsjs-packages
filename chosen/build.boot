@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
                  [cljsjs/jquery "2.1.4-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -29,4 +29,6 @@
                 #"^chosen-sprite@2x.png"    "public/chosen/css/chosen-sprite@2x.png"})
    (sift :include #{#"^cljsjs" #"^public"})
    (deps-cljs :name "cljsjs.chosen"
-              :requires ["cljsjs.jquery"])))
+              :requires ["cljsjs.jquery"])
+   (pom)
+   (jar)))

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -29,4 +29,6 @@
     (sift :move {#"^marked-(.*)/lib/marked\.js"  "cljsjs/development/marked.inc.js"
                  #"^marked-(.*)/marked\.min\.js" "cljsjs/production/marked.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.marked")))
+    (deps-cljs :name "cljsjs.marked")
+    (pom)
+    (jar)))

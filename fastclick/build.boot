@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -24,4 +24,6 @@
     (minify :in "cljsjs/fastclick/development/fastclick.inc.js"
             :out "cljsjs/fastclick/production/fastclick.min.inc.js")
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.fastclick")))
+    (deps-cljs :name "cljsjs.fastclick")
+    (pom)
+    (jar)))

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -24,4 +24,6 @@
    (sift :move {#"^virtual-dom-.*/dist/virtual-dom.js$" "cljsjs/development/virtual-dom.inc.js"})
    (minify :in "cljsjs/development/virtual-dom.inc.js" :out "cljsjs/production/virtual-dom.min.inc.js")
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.virtual-dom")))
+   (deps-cljs :name "cljsjs.virtual-dom")
+   (pom)
+   (jar)))

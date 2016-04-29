@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -25,4 +25,6 @@
    (minify :in "cljsjs/localforage/development/localforage.inc.js"
            :out "cljsjs/localforage/production/localforage.min.inc.js")
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.localforage")))
+   (deps-cljs :name "cljsjs.localforage")
+   (pom)
+   (jar)))

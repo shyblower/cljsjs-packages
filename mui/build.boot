@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -25,4 +25,6 @@
                  #"^mui-[\d.]+/dist/js/mui\.min\.js$"   "cljsjs/production/mui.min.inc.js"
                  #"^mui-[\d.]+/dist/css/mui\.min\.css$" "cljsjs/common/mui.min.inc.css"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.mui" :no-externs true)))
+    (deps-cljs :name "cljsjs.mui" :no-externs true)
+    (pom)
+    (jar)))

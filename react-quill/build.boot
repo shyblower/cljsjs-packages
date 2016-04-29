@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
                   [cljsjs/quill "0.20.0-0"]
                   [cljsjs/react "0.13.3-1"]])
 
@@ -31,4 +31,6 @@
                  "cljsjs/react-quill/production/react-quill.min.inc.js"})
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.react-quill"
-               :requires ["cljsjs.quill" "cljsjs.react"])))
+               :requires ["cljsjs.quill" "cljsjs.react"])
+    (pom)
+    (jar)))

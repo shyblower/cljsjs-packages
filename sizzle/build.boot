@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,4 +23,6 @@
     (sift :move {#"^sizzle-.*/dist/sizzle.js" "cljsjs/development/sizzle.inc.js"})
     (sift :move {#"^sizzle-.*/dist/sizzle.min.js" "cljsjs/production/sizzle.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.sizzle"))) 
+    (deps-cljs :name "cljsjs.sizzle")
+    (pom)
+    (jar))) 

@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,4 +23,6 @@
     (sift :move {#"^js-yaml-.*/dist/js-yaml.js" "cljsjs/development/js-yaml.inc.js"})
     (sift :move {#"^js-yaml-.*/dist/js-yaml.min.js" "cljsjs/production/js-yaml.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.js-yaml"))) 
+    (deps-cljs :name "cljsjs.js-yaml")
+    (pom)
+    (jar)))

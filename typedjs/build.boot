@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
                  [cljsjs/jquery "2.1.4-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -25,4 +25,6 @@
                 (re-pattern (str "^typed.js-" +lib-version+ "/dist/typed.min.js$"))  "cljsjs/typedjs/production/typed.min.inc.js"})
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.typedjs"
-              :requires ["cljsjs.jquery"])))
+              :requires ["cljsjs.jquery"])
+   (pom)
+   (jar)))

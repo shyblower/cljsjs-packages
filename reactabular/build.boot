@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]
 		  [cljsjs/lodash "3.10.1-0"]
 		  [cljsjs/react "0.13.3-0"]])
 
@@ -27,4 +27,6 @@
                 #"reactabular\.min\.js" "cljsjs/reactabular/production/reactabular.min.inc.js"})
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.reactabular"
-              :requires ["cljsjs.lodash" "cljsjs.react"])))
+              :requires ["cljsjs.lodash" "cljsjs.react"])
+   (pom)
+   (jar)))

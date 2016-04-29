@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -28,4 +28,6 @@
                 #"^phaser\.min\.js$"
                 "cljsjs/phaser/production/phaser.min.inc.js"})
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.phaser")))
+   (deps-cljs :name "cljsjs.phaser")
+   (pom)
+   (jar)))

@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -39,4 +39,6 @@
    (replace-content :in "cljsjs/jszip/production/jszip.min.inc.js"
                     :match #"^\/\*" :value (str no-exports "\n/*"))
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.jszip")))
+   (deps-cljs :name "cljsjs.jszip")
+   (pom)
+   (jar)))

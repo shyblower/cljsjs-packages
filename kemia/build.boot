@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.1" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
@@ -23,5 +23,7 @@
               :unzip true)
     (sift :move {#"^kemia-([\d\.]*)/kemia/" "cljsjs/kemia/development/"
                  #"^kemia-([\d\.]*)/css/kemia.css" "cljsjs/kemia/common/kemia.inc.css"})
-    (sift :include #{#"^cljsjs/" #"deps.cljs"})))
+    (sift :include #{#"^cljsjs/" #"deps.cljs"})
+    (pom)
+    (jar)))
 
