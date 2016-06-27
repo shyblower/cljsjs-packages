@@ -6,7 +6,7 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "0.29.4")
+(def +lib-version+ "0.29.5")
 (def +version+ (str +lib-version+ "-0"))
 
 
@@ -20,7 +20,7 @@
 
 (deftask download-react-bootstrap []
   (download :url      (format "https://github.com/react-bootstrap/react-bootstrap-bower/archive/v%s.zip" +lib-version+)
-            :checksum "7CB180982892520108BE0C88ACBD5C4D" ;;MD5
+            :checksum "914C2A4885947440FFBABBAD4965B321" ;;MD5
             :unzip    true))
 
 (deftask package []
